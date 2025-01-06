@@ -1,27 +1,29 @@
 ---
 import { contentfulClient } from "../lib/contentful";
 import type { BlogPost } from "../lib/contentful";
+import MainLayout from "../layouts/MainLayout.astro";
 
 const entries = await contentfulClient.getEntries<BlogPost>({
   content_type: "blogPost",
 });
 
 const posts = entries.items.map((item) => {
-  const { title, date, description, slug } = item.fields;
+  const { title, date, author, description, slug } = item.fields;
   return {
     title,
     slug,
+    author,
     description,
     date: new Date(date).toLocaleDateString()
   };
 });
 ---
-<html lang="en">
-  <head>
-    <title>My Blog</title>
+<MainLayout title="My Blog">
   </head>
   <body>
     <h1>My Blog</h1>
+    <section class="container" aria-label="New Blog Posts">
+      <div class="post-container">
     <ul>
       {posts.map((post) => (
         <li>
@@ -29,9 +31,12 @@ const posts = entries.items.map((item) => {
             <h2>{post.title}</h2>
           </a>
           <time>{post.date}</time>
+          <p><small>author: </small>{post.author}</p>
           <p>{post.description}</p>
         </li>
       ))}
     </ul>
+  </div>
+  </section>
   </body>
-</html>
+</MainLayout>  

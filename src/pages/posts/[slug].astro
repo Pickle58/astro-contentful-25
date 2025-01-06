@@ -13,13 +13,14 @@ export async function getStaticPaths() {
       title: item.fields.title,
       content: documentToHtmlString(item.fields.content),
       date: new Date(item.fields.date).toLocaleDateString(),
+      author: item.fields.author,
       slug: item.fields.slug,
     },
   }));
   return pages;
 }
 
-const { content, title, date, slug } = Astro.props;
+const { content, title, date, author,  slug } = Astro.props;
 ---
 <html lang="en">
   <head>
@@ -29,5 +30,6 @@ const { content, title, date, slug } = Astro.props;
     <h1>{title}</h1>
     <time>{date}</time>
     <article set:html={content} />
+    <p><small>author: </small>{author}</p>
   </body>
 </html>
