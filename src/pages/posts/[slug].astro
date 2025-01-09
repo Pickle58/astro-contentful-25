@@ -1,4 +1,5 @@
 ---
+import MainLayout from "../../layouts/MainLayout.astro";
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import type { BlogPost } from "../../lib/contentful";
@@ -22,14 +23,12 @@ export async function getStaticPaths() {
 
 const { content, title, date, author,  slug } = Astro.props;
 ---
-<html lang="en">
-  <head>
-    <title>{title}</title>
-  </head>
-  <body>
-    <h1>{title}</h1>
+<MainLayout title="Blog Post">
+  <article class="card">
+    <h2 class="h1">{title}</h2>
     <time>{date}</time>
     <article set:html={content} />
     <p><small>author: </small>{author}</p>
-  </body>
-</html>
+  </article>
+</MainLayout>
+
