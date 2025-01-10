@@ -1,0 +1,41 @@
+---
+const imageSrc = "/src/images/your-image.jpg"; // Replace with the name of your image
+---
+
+<section 
+  class="hero-section"
+  style={`background-image: url(${imageSrc});`}
+>
+  <div class="overlay">
+    <h1 class="hero-title">Becca's Blog</h1>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for text visibility */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-title {
+    color: white;
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+  }
+</style>
