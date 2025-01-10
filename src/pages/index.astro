@@ -2,6 +2,7 @@
 import { contentfulClient } from "../lib/contentful";
 import type { BlogPost } from "../lib/contentful";
 import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
 
 const entries = await contentfulClient.getEntries<BlogPost>({
   content_type: "blogPost",
@@ -19,9 +20,9 @@ const posts = entries.items.map((item) => {
 });
 ---
 <MainLayout title="Becca's Blog">
+<Hero />  
   
-  <body>
-    <h2 class="h1">Becca's Blog</h2>
+    
     <section class="container" aria-label="New Blog Posts">
       <div class="post-container">
     <ul>
@@ -38,5 +39,5 @@ const posts = entries.items.map((item) => {
     </ul>
   </div>
   </section>
-  </body>
+  
 </MainLayout>  
