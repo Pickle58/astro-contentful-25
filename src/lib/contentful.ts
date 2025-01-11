@@ -9,8 +9,15 @@ export interface BlogPost {
     content: Document,
     date: string,
     description: string,
-    slug: string
-  }
+    slug: string,
+    photo?: {
+      fields: {
+        file: {
+          url: string;
+        };
+      };
+    };
+  };
 }
 
 export const contentfulClient = contentful.createClient({

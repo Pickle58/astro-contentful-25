@@ -8,6 +8,7 @@ export async function getStaticPaths() {
   const { items } = await contentfulClient.getEntries<BlogPost>({
     content_type: "blogPost",
   });
+
   const pages = items.map((item) => ({
     params: { slug: item.fields.slug },
     props: {
@@ -16,17 +17,19 @@ export async function getStaticPaths() {
       date: new Date(item.fields.date).toLocaleDateString(),
       author: item.fields.author,
       slug: item.fields.slug,
+      photo: item.fields.photo ? item.fields.photo.fields.file.url : null, // Handle optional photo
     },
   }));
   return pages;
 }
 
-const { content, title, date, author,  slug } = Astro.props;
+const { content, title, date, author, slug, photo } = Astro.props;
 ---
 <MainLayout title="Blog Post">
   <article class="card">
     <h2 class="h1">{title}</h2>
     <time>{date}</time>
+    {photo && <img src={photo} alt={`Image for ${title}`} />}
     <article set:html={content} />
     <p><small>author: </small>{author}</p>
   </article>
