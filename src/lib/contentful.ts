@@ -5,7 +5,7 @@ const {Document} = pkg;
 export interface BlogPost {
   contentTypeId: "blogPost",
 
-  console.log("Fetched Blog Posts:", items); // Log the fetched data
+  
 
   fields: {
     title: string,
