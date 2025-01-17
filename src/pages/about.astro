@@ -1,16 +1,13 @@
 ---
 // Imports your layout component
 import MainLayout from '../layouts/MainLayout.astro';
-
-// Placeholder background image
-const backgroundImage = "/images/sunset-with-dog.jpg";
 ---
 <MainLayout>
   <section
-    style={`position: relative; width: 100%; height: 100vh; background-image: url(${backgroundImage}); background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;`}
+    style={`position: relative; width: 100%; height: 100vh; background-image: url(/images/sunset-with-dog.jpg); background-size: cover; background-position: center; display: flex; align-items: flex-end;`}
   >
     <div
-      style={`background-color: rgba(0, 0, 0, 0.6); color: white; padding: 2rem; border-radius: 8px; text-align: center; max-width: 600px;`}
+      style={`background-color: rgba(0, 0, 0, 0.6); color: white; padding: 2rem; border-radius: 8px; text-align: center; max-width: 600px; margin: 2rem;`}
     >
       <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">About Me</h1>
       <p>
