@@ -1,6 +1,36 @@
 <nav>
     <div class="navbar">
-        <a href="/">Home</a>
-        <a href="/about">About Me</a>
+      <a href="/">Home</a>
+      <a href="/about">About Me</a>
     </div>
-</nav>
+  </nav>
+  
+  <style>
+    nav {
+      background-color: white;
+      padding: 1rem;
+    }
+  
+    .navbar {
+      display: flex;
+      gap: 1rem; /* Add spacing between the links */
+      justify-content: center; /* Center align the links */
+    }
+  
+    .navbar a {
+      text-decoration: none; /* Remove underline */
+      color: black; /* Set text color to black */
+      background-color: #f3f3f3; /* Light gray button background */
+      padding: 0.5rem 1rem; /* Add padding for button effect */
+      border-radius: 8px; /* Medium rounded corners */
+      font-size: 1rem; /* Adjust font size */
+      font-weight: bold; /* Make text bold */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
+      transition: background-color 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    }
+  
+    .navbar a:hover {
+      background-color: #e0e0e0; /* Slightly darker gray on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    }
+  </style>
