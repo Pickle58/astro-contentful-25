@@ -11,9 +11,12 @@
       padding: 1rem;
       border: 2px solid #add8e6; /* Light blue border */
       border-radius: 8px; /* Medium border radius */
-      max-width: 800px; /* Restrict width */
-      margin: auto; /* Center the nav horizontally */
+      max-width: 100%; /* Ensure full width for sticky effect */
+      margin: auto; /* Center horizontally */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+      position: sticky; /* Sticky position */
+      top: 0; /* Sticks to the top of the viewport */
+      z-index: 1000; /* Ensures the nav stays on top of other content */
     }
   
     .navbar {
@@ -28,7 +31,7 @@
       background-color: #f3f3f3; /* Light gray button background */
       padding: 0.5rem 1rem; /* Add padding for button effect */
       border-radius: 8px; /* Medium rounded corners for buttons */
-      font-size: 1.75rem; /* Increase font size (adjust as needed) */
+      font-size: 1.25rem; /* Increase font size */
       font-weight: bold; /* Make text bold */
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
       transition: background-color 0.3s, box-shadow 0.3s; /* Smooth hover effect */
